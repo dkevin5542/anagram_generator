@@ -9,7 +9,7 @@ function showSection(section) {
     document.getElementById("dictionarySection").style.display = section === "dictionary" ? "block" : "none";
   
     if (section === "dictionary") {
-      model.dictionaryPage = 0; // reset
+      model.dictionaryPage = 0; 
       view.renderDictionary();
     }
   }
@@ -18,7 +18,7 @@ function showSection(section) {
 window.onload = function () {
   model.loadDictionary(() => {
     console.log("Dictionary loaded.");
-    showSection("generator"); // Show generator by default
+    showSection("generator"); 
   });
 };
 
