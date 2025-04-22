@@ -30,7 +30,7 @@ const model = {
     }
   };
   
-  function generateAnagrams(str) {
+function generateAnagrams(str) {
     const results = new Set();
     const seen = new Set();
   
@@ -47,14 +47,14 @@ const model = {
   
     permute("", str.toLowerCase());
     return Array.from(results).sort();
-  }
+}
 
-  model.getAllWords = function () {
+model.getAllWords = function () {
     return Array.from(this.dictionary).sort();
-  };
+};
 
-  model.dictionaryPage = 0;
-  model.pageSize = 1000;
+model.dictionaryPage = 0;
+model.pageSize = 1000;
 
 model.getPagedWords = function () {
   const allWords = Array.from(this.dictionary).sort();
