@@ -48,5 +48,28 @@ const model = {
     permute("", str.toLowerCase());
     return Array.from(results).sort();
   }
+
+  model.getAllWords = function () {
+    return Array.from(this.dictionary).sort();
+  };
+
+  model.dictionaryPage = 0;
+  model.pageSize = 1000;
+
+model.getPagedWords = function () {
+  const allWords = Array.from(this.dictionary).sort();
+  const start = this.dictionaryPage * this.pageSize;
+  const end = start + this.pageSize;
+  return allWords.slice(start, end);
+};
+
+model.hasMoreWords = function () {
+  return (this.dictionaryPage + 1) * this.pageSize < this.dictionary.size;
+};
+
+model.loadNextPage = function () {
+  this.dictionaryPage += 1;
+};
+
   
   

@@ -9,11 +9,30 @@
   <script src="controller.js" defer></script>
 </head>
 <body>
-  <div id="app">
-    <h1>Anagram Generator</h1>
-    <input type="text" id="inputText" placeholder="Type a word" onchange="handleInputChange()" />
-    <div id="output">Loading dictionary...</div>
-  </div>
+  <nav class="navbar">
+    <div class="nav-title">Anagram App</div>
+    <div class="nav-links">
+      <button onclick="showSection('generator')">Anagram Generator</button>
+      <button onclick="showSection('dictionary')">View All Words</button>
+    </div>
+  </nav>
+
+  <main id="app">
+    <!-- Anagram Generator -->
+    <section id="generatorSection" class="card">
+      <h1>Anagram Generator</h1>
+      <input type="text" id="inputText" placeholder="Type a word..." onchange="handleInputChange()" />
+      <div id="output" class="output-box">No input yet.</div>
+    </section>
+
+    <!-- Dictionary Viewer -->
+    <section id="dictionarySection" class="card" style="display: none;">
+      <h1>Valid English Words</h1>
+      <div id="dictionaryList">Loading...</div>
+    </section>
+  </main>
 </body>
 </html>
+
+
 
